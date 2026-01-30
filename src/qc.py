@@ -67,3 +67,29 @@ def is_high_quality(sequence: str, min_length: int = 200, max_n_content: float =
         return False
         
     return True
+
+from typing import List, Tuple
+
+def process_batch(sequences: List[str], min_length: int = 200) -> Tuple[List[str], List[str]]:
+    """
+    Process a batch of sequences and separate them into passed and failed lists.
+    
+    Args:
+        sequences (List[str]): A list of raw viral sequences.
+        min_length (int): Threshold for length check.
+        
+    Returns:
+        Tuple[List[str], List[str]]: (passed_sequences, failed_sequences)
+    """
+    passed = []
+    failed = []
+    
+    # Loop through every sequence in the input list
+    for seq in sequences:
+        # Apply the decision logic
+        if is_high_quality(seq, min_length=min_length):
+            passed.append(seq)
+        else:
+            failed.append(seq)
+            
+    return passed, failed
