@@ -34,3 +34,36 @@ def check_length(sequence: str, min_length: int = 200) -> bool:
     if not sequence:
         return False
     return len(sequence) >= min_length
+
+def is_high_quality(sequence: str, min_length: int = 200, max_n_content: float = 5.0) -> bool:
+    """
+    Determines if a sequence passes all QC thresholds.
+    
+    Args:
+        sequence (str): Viral DNA sequence.
+        min_length (int): Minimum acceptable length (bp).
+        max_n_content (float): Maximum allowed N percentage.
+        
+    Returns:
+        bool: True if sequence passes all checks, False otherwise.
+    """
+    # Check 1: Length
+    if not check_length(sequence, min_length):
+        return False
+        
+    # Check 2: N-content (Ambiguity)
+    seq_upper = sequence.upper()
+    n_count = seq_upper.count('N')
+    total_len = len(sequence)
+    
+    # Avoid division by zero
+    if total_len == 0:
+        return False
+        
+    n_percent = (n_count / total_len) * 100.0
+    
+    # Decision logic
+    if n_percent > max_n_content:
+        return False
+        
+    return True
