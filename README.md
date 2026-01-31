@@ -3,10 +3,20 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/Qasim-Hussain-Code/ViralSeq-QC/actions/workflows/ci.yml/badge.svg)](https://github.com/Qasim-Hussain-Code/ViralSeq-QC/actions)
+[![Kaggle](https://img.shields.io/badge/Kaggle-Tutorial-20BEFF?logo=kaggle)](https://www.kaggle.com/code/qasimhu/viralseq-qc-ipynb)
 
 **ViralSeq-QC** is a zero-dependency CLI toolkit for quality control of viral consensus sequences. It performs rigorous pre-processing by filtering artifacts based on length, ambiguity (N-content), sequence complexity, and other bioinformatics metrics.
 
 ![ViralSeq-QC Terminal Demo](docs/images/terminal_demo.png)
+
+## Interactive Tutorial
+
+Try ViralSeq-QC with real NCBI viral sequences:
+
+[![Open in Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/code/qasimhu/viralseq-qc-ipynb)
+
+Or view the notebook locally: [`notebooks/ViralSeq_QC_Tutorial.ipynb`](notebooks/ViralSeq_QC_Tutorial.ipynb)
+
 
 ## Features
 
