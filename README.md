@@ -6,6 +6,8 @@
 
 **ViralSeq-QC** is a zero-dependency CLI toolkit for quality control of viral consensus sequences. It performs rigorous pre-processing by filtering artifacts based on length, ambiguity (N-content), sequence complexity, and other bioinformatics metrics.
 
+![ViralSeq-QC Terminal Demo](docs/images/terminal_demo.png)
+
 ## Features
 
 - **Zero Dependencies** - Pure Python 3, no external packages required
