@@ -1,0 +1,3 @@
+Sequence_ID	Length	GC_Content	Status
+seq1	8	50.00	PASS
+seq2	4	100.00	FAIL
