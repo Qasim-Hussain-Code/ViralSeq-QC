@@ -1,0 +1,2 @@
+# Mark Jupyter notebooks as vendored to exclude them from GitHub language stats
+*.ipynb linguist-vendored
