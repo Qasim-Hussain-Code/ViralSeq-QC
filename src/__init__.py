@@ -18,13 +18,13 @@ Example usage:
 
 # Core I/O functions
 from .input_output import (
-    parse_fasta,
-    write_tsv_report,
-    write_json_report,
-    write_fasta,
-    validate_fasta_format,
     FastaParseError,
     InvalidFastaError,
+    parse_fasta,
+    validate_fasta_format,
+    write_fasta,
+    write_json_report,
+    write_tsv_report,
 )
 
 # QC functions
@@ -32,16 +32,16 @@ from .qc import (
     # Core metrics
     calculate_gc_content,
     calculate_n_content,
+    calculate_sequence_complexity,
     check_length,
-    is_high_quality,
+    check_terminal_ns,
     # Advanced metrics
     detect_homopolymer_runs,
-    calculate_sequence_complexity,
-    check_terminal_ns,
-    validate_nucleotides,
     get_sequence_metrics,
+    is_high_quality,
     # Batch processing
     process_batch,
+    validate_nucleotides,
 )
 
 __all__ = [

@@ -4,11 +4,10 @@ ViralSeq-QC: Test Suite Configuration
 Pytest fixtures and shared test resources for ViralSeq-QC testing.
 """
 
-import pytest
-import tempfile
 import os
-from pathlib import Path
+import tempfile
 
+import pytest
 
 # =============================================================================
 # Test Data Fixtures
@@ -54,13 +53,13 @@ def temp_fasta_file(sample_sequences):
     for name, seq in sample_sequences.items():
         if seq:  # Skip empty sequences
             content += f">{name}\n{seq}\n"
-    
+
     with tempfile.NamedTemporaryFile(mode='w', suffix='.fasta', delete=False) as f:
         f.write(content)
         temp_path = f.name
-    
+
     yield temp_path
-    
+
     # Cleanup
     if os.path.exists(temp_path):
         os.unlink(temp_path)
@@ -76,13 +75,13 @@ ATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGC
 >single_line_seq
 GCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCT
 """
-    
+
     with tempfile.NamedTemporaryFile(mode='w', suffix='.fasta', delete=False) as f:
         f.write(content)
         temp_path = f.name
-    
+
     yield temp_path
-    
+
     # Cleanup
     if os.path.exists(temp_path):
         os.unlink(temp_path)
@@ -93,7 +92,7 @@ def temp_output_dir():
     """Create a temporary directory for output files."""
     temp_dir = tempfile.mkdtemp()
     yield temp_dir
-    
+
     # Cleanup
     import shutil
     if os.path.exists(temp_dir):
@@ -105,9 +104,9 @@ def empty_fasta_file():
     """Create an empty FASTA file."""
     with tempfile.NamedTemporaryFile(mode='w', suffix='.fasta', delete=False) as f:
         temp_path = f.name
-    
+
     yield temp_path
-    
+
     if os.path.exists(temp_path):
         os.unlink(temp_path)
 
@@ -119,12 +118,12 @@ def malformed_fasta_file():
 >proper_header
 GCTAGCTAGCTA
 """
-    
+
     with tempfile.NamedTemporaryFile(mode='w', suffix='.fasta', delete=False) as f:
         f.write(content)
         temp_path = f.name
-    
+
     yield temp_path
-    
+
     if os.path.exists(temp_path):
         os.unlink(temp_path)
