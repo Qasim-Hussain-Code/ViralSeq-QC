@@ -11,7 +11,7 @@ import gzip
 import json
 import logging
 from pathlib import Path
-from typing import Dict, Generator, List, Optional, TextIO, Tuple
+from typing import Any, Dict, Generator, List, Optional, TextIO, Tuple
 
 logger = logging.getLogger(__name__)
 
@@ -231,7 +231,7 @@ def write_json_report(
     Raises:
         IOError: If file cannot be written.
     """
-    output = {
+    output: Dict[str, Any] = {
         'results': results
     }
 
